@@ -1,0 +1,54 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121213;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+li a {
+    margin: 10px 20px;
+}
+li a:hover{
+    border: 1px solid grey;
+   
+}
+.logoText {
+    font-weight: bolder;
+    margin-left: 10px;
+    color: hsl(345deg 100% 47%);
+    font-size: 25px;
+}
+
+.mainFooter{
+    background-color: black;
+    border-top: 1px solid white;
+}
+
+.footerLogoDiv {
+    display: flex;
+    margin-top: 80px;
+}
+.logoTextFooter {
+    font-weight: bolder;
+    margin-left: 10px;
+    color: hsl(345deg 100% 47%);
+    font-size: 25px;
+    border:0px solid red;
+
+}
+.logoFooter{
+    
+}
+.privacyDiv{
+    text-align:center;
+    padding-top:50px;   
+}

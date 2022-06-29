@@ -1,0 +1,32 @@
+﻿@page 
+@model TodoWebAppAsp.Net.Pages.SchoolTodo.DeleteSchoolTodoModel
+@{
+    Layout = "~/Pages/Shared/_Dashboard.cshtml";
+}
+
+<form method="POST">
+
+     <div class="form-group">
+    <label for="sid" class="text-white">Id</label>
+    <input type="text" class="form-control" id="sid" name="_Id" value="@Model.schoolTodo.Id" readonly>
+  </div>
+
+  <div class="form-group">
+    <label for="title" class="text-white">Title</label>
+    <input type="text" class="form-control" id="title" placeholder="Enter Title" name="_Title" value="@Model.schoolTodo.Title" readonly>
+  </div>
+
+<div class="form-group">
+    <label for="desc" class="text-white">Description</label>
+    <input type="text" class="form-control" id="desc" name="_Description" value="@Model.schoolTodo.Description" readonly>
+  </div> 
+
+  <div class="form-group">
+    <label for="uemail" class="text-white">UserEmail</label>
+    <input type="text" class="form-control" id="uemail" name= "UserEmail" value="@Model.schoolTodo.UserEmail" readonly>
+  </div> 
+
+  <br />
+  <p class="text-danger">Have you completed this task?</p>
+  <input type="Submit" value = "Yes" class="btn btn-primary"/>
+ </form>

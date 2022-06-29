@@ -1,0 +1,117 @@
+﻿@page
+@model TodoWebAppAsp.Net.Pages.SignupModel
+@{
+}
+
+<style>
+
+
+    .signupForm {
+        position: relative;
+        top: 30%;
+        left: 30%;
+        width: 40%;
+        padding: 20px 20px;
+        color: white;
+        border-radius: 20px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        background-image: url(../Images/signupFormImage.jpg);
+        background-position: center;
+        background-size: cover;
+        margin: 150px 0px;
+    }
+
+    label {
+        cursor: pointer;
+        display: inline-block;
+        padding: 3px 6px;
+        text-align: right;
+        width: 150px;
+        vertical-align: top;
+    }
+
+    input {
+        text-align: center;
+        font-size: inherit;
+    }
+
+</style>
+
+
+<body>
+    <div class="signupForm">
+        <form id="mySignupForm" method="POST">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"> </div>
+            <div>
+                <label asp-for="signupProperty.FirstName"></label>
+                <div>
+                    <input asp-for="signupProperty.FirstName" />
+                    <span asp-validation-for="signupProperty.FirstName" class="text-danger"></span>
+                </div>
+            </div>
+
+            <br /><br />
+
+            <div>
+                <label asp-for="signupProperty.LastName"></label>
+                <div>
+                    <input asp-for="signupProperty.LastName" />
+                    <span asp-validation-for="signupProperty.LastName" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <br /><br />
+            <div>
+                <label asp-for="signupProperty.Email"></label>
+                <div>
+                    <input asp-for="signupProperty.Email" />
+                    <span asp-validation-for="signupProperty.Email" class="text-danger"></span>
+                </div>
+            </div>
+            <br /><br />
+
+            <div>
+                <label asp-for="signupProperty.Password"></label>
+                <div>
+                    <input asp-for="signupProperty.Password" />
+                    <span asp-validation-for="signupProperty.Password" class="text-danger"></span>
+                </div>
+            </div>
+            <br /><br />
+
+            <div>
+                <label asp-for="signupProperty.ConfirmPassword"></label>
+                <div>
+                    <input asp-for="signupProperty.ConfirmPassword" />
+                    <span asp-validation-for="signupProperty.ConfirmPassword" class="text-danger"></span>
+                </div>
+            </div>
+
+            <br /><br />
+            <center><input type="submit" id="btnSignup" value="Signup" class="btn btn-primary" disabled/></center>
+        </form>
+    </div>
+</body>
+
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+     }
+}
+
+
+<script>
+ var $form  = $("#mySignupForm");
+ var $submitbtn = $("#btnSignup");
+
+ $form.on("blur", "input", ()=>{
+     if($form.valid()){
+         $submitbtn.removeAttr("disabled");
+     }else{
+         $submitbtn.attr("disabled", "disabled");
+     }
+ });
+</script>
